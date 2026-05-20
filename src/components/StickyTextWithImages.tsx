@@ -156,8 +156,12 @@ export default function StickyTextWithImages({ images }: StickyTextWithImagesPro
 
       {/* Scattered 3D-tilted images below */}
       <div
-        className="relative px-4 md:px-0 flex flex-col gap-32 md:gap-52"
-        style={{ transformStyle: "preserve-3d" }}
+        className="relative flex flex-col gap-32 md:gap-52"
+        style={{
+          transformStyle: "preserve-3d",
+          paddingLeft: isMobile ? "16px" : "32px",
+          paddingRight: isMobile ? "16px" : "32px",
+        }}
       >
         {images.map((img, i) => {
           const align = ALIGNMENTS[i % ALIGNMENTS.length];
