@@ -19,8 +19,13 @@ export default function ServicesPage() {
       <section className="relative bg-white md:overflow-hidden md:h-[calc(100vh-10px)]">
         <div className="flex flex-col md:flex-row md:h-full md:min-h-0">
           <div
-            className="w-full md:w-1/2 md:flex md:items-center md:justify-start md:py-0 md:pl-[8vw] md:pr-[4vw] text-center md:text-left md:px-0 md:pt-0 md:pb-0"
-            style={{ paddingLeft: "24px", paddingRight: "24px", paddingTop: "64px", paddingBottom: "40px" }}
+            className="w-full md:w-1/2 md:flex md:items-center md:justify-start md:py-0 md:pr-[4vw] text-center md:text-left md:px-0 md:pt-0 md:pb-0"
+            style={{
+              paddingLeft: "clamp(24px, 6vw, 100px)",
+              paddingRight: "24px",
+              paddingTop: "64px",
+              paddingBottom: "40px",
+            }}
           >
             <ScrollReveal>
               <div className="max-w-md mx-auto md:mx-0">
@@ -39,9 +44,13 @@ export default function ServicesPage() {
           </div>
           <div
             className="w-full md:w-1/2 flex flex-col h-auto md:h-full md:px-0 md:pb-0"
-            style={{ paddingLeft: "24px", paddingRight: "24px", paddingBottom: "48px" }}
+            style={{
+              paddingLeft: "24px",
+              paddingRight: "clamp(0px, calc(48px - 6vw), 24px)",
+              paddingBottom: "48px",
+            }}
           >
-            <div className="hidden md:block" style={{ height: 150 }} />
+            <div className="hidden md:block" style={{ height: 80 }} />
             <div className="overflow-hidden md:rounded-l-[40px] md:flex-1 md:ml-4 h-[32vh] md:h-auto">
               <img
                 src="https://static.wixstatic.com/media/5dbb31_ab4c046bdfc8453988af86c797e8a3f6~mv2.jpg/v1/fill/w_800,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_ab4c046bdfc8453988af86c797e8a3f6~mv2.jpg"
@@ -57,8 +66,11 @@ export default function ServicesPage() {
       <section className="bg-white text-black py-16 md:py-0 md:min-h-screen md:h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 md:h-full gap-8 md:gap-0">
           <div
-            className="flex items-center md:px-0 md:pr-8 order-2 md:order-1"
-            style={{ paddingLeft: "24px", paddingRight: "24px" }}
+            className="flex items-center order-2 md:order-1"
+            style={{
+              paddingLeft: "clamp(0px, calc(48px - 6vw), 24px)",
+              paddingRight: "clamp(24px, 4vw, 32px)",
+            }}
           >
             <ScrollReveal delay={200} className="w-full">
               <Image
@@ -67,7 +79,7 @@ export default function ServicesPage() {
                 width={800}
                 height={500}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-[40vh] md:h-auto md:max-h-[70vh] object-cover transition-transform duration-700 hover:scale-110 md:rounded-r-[40px]"
+                className="w-full h-[40vh] md:h-[72vh] object-cover transition-transform duration-700 hover:scale-110 md:rounded-r-[40px]"
               />
             </ScrollReveal>
           </div>
@@ -115,7 +127,12 @@ export default function ServicesPage() {
           </div>
           <div
             className="flex items-center justify-center md:p-8 order-2 md:order-2"
-            style={{ paddingLeft: "24px", paddingRight: "24px", paddingTop: "24px", paddingBottom: "24px" }}
+            style={{
+              paddingLeft: "24px",
+              paddingRight: "clamp(0px, calc(48px - 6vw), 24px)",
+              paddingTop: "24px",
+              paddingBottom: "24px",
+            }}
           >
             <ScrollReveal delay={200} className="w-full">
             <video
