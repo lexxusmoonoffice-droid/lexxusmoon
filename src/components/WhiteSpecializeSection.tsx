@@ -82,13 +82,6 @@ export default function WhiteSpecializeSection() {
             })}
           </p>
         </div>
-
-        {/* Why Choose Us heading */}
-        <div className="relative z-10 pt-20 md:pt-28 pb-20 md:pb-32 px-6 text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e50914] tracking-tight">
-            Why Choose Us?
-          </h2>
-        </div>
       </section>
     </>
   );

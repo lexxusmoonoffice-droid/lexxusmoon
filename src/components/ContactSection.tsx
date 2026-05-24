@@ -83,7 +83,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* Left - Video */}
         <div
-          className="w-full md:w-[50%] relative cursor-pointer flex items-center justify-center min-h-[280px] md:min-h-[500px]"
+          className="w-full md:w-[45%] relative cursor-pointer flex items-center justify-center min-h-[280px] md:min-h-[560px]"
           onClick={toggleVideo}
         >
           <video
@@ -92,8 +92,8 @@ export default function ContactSection() {
             muted
             loop
             playsInline
-            className="w-full h-full object-contain"
-            style={{ mixBlendMode: 'darken' }}
+            className="w-[100%] h-[100%] object-contain"
+            style={{ mixBlendMode: 'darken', transform: 'scale(1.08) translateX(20px)' }}
           >
             <source src="/mr.mp4" type="video/mp4" />
           </video>
@@ -111,7 +111,7 @@ export default function ContactSection() {
 
         {/* Right - Contact Form */}
         <div
-          className="w-full md:w-[50%] py-10 md:py-16 md:px-14 relative"
+          className="w-full md:w-[55%] py-10 md:py-16 relative"
           style={{ paddingLeft: "24px", paddingRight: "24px" }}
         >
           {success ? (
@@ -151,7 +151,7 @@ export default function ContactSection() {
             </div>
           ) : (
           <>
-          <h2 className="relative" style={{ fontSize: 32, fontWeight: 700, color: '#171200', marginBottom: 28 }}>
+          <h2 className="relative" style={{ fontSize: 28, fontWeight: 700, color: '#171200', marginBottom: 32, maxWidth: 500, marginLeft: "auto", marginRight: 0, paddingLeft: 10 }}>
             Contact us
           </h2>
 
@@ -169,10 +169,10 @@ export default function ContactSection() {
             </div>
           )}
 
-          <form noValidate onSubmit={handleSubmit} className="space-y-6 relative bg-white" style={{ maxWidth: 520, zIndex: 1, padding: "10px" }}>
+          <form noValidate onSubmit={handleSubmit} className="relative bg-white" style={{ maxWidth: 500, marginLeft: "auto", marginRight: 0, zIndex: 1, padding: "10px", display: "flex", flexDirection: "column", gap: "22px" }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: '#171200', display: 'block', marginBottom: 6 }}>
+                <label style={{ fontSize: 14, fontWeight: 500, color: '#999', display: 'block', marginBottom: 6 }}>
                   First name <span>*</span>
                 </label>
                 <input
@@ -182,9 +182,9 @@ export default function ContactSection() {
                   onChange={(e) => { setFormData({ ...formData, firstName: e.target.value }); setErrors({ ...errors, firstName: "" }); }}
                   style={{
                     width: '100%',
-                    border: `1px solid ${errors.firstName ? '#dc2626' : '#ccc'}`,
-                    padding: '10px 12px',
-                    fontSize: 14,
+                    border: `1px solid ${errors.firstName ? '#dc2626' : '#999'}`,
+                    padding: '14px 14px',
+                    fontSize: 15,
                     color: '#171200',
                     outline: 'none',
                     background: 'transparent',
@@ -193,7 +193,7 @@ export default function ContactSection() {
                 {errors.firstName && <span style={{ fontSize: 12, color: '#dc2626', marginTop: 4, display: 'flex', alignItems: 'center', gap: 4 }}>ⓘ {errors.firstName}</span>}
               </div>
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: '#171200', display: 'block', marginBottom: 6 }}>
+                <label style={{ fontSize: 14, fontWeight: 500, color: '#999', display: 'block', marginBottom: 6 }}>
                   Last name
                 </label>
                 <input
@@ -204,8 +204,8 @@ export default function ContactSection() {
                   style={{
                     width: '100%',
                     border: '1px solid #ccc',
-                    padding: '10px 12px',
-                    fontSize: 14,
+                    padding: '14px 14px',
+                    fontSize: 15,
                     color: '#171200',
                     outline: 'none',
                     background: 'transparent',
@@ -216,7 +216,7 @@ export default function ContactSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: '#171200', display: 'block', marginBottom: 6 }}>
+                <label style={{ fontSize: 14, fontWeight: 500, color: '#999', display: 'block', marginBottom: 6 }}>
                   Email <span>*</span>
                 </label>
                 <input
@@ -226,9 +226,9 @@ export default function ContactSection() {
                   onChange={(e) => { setFormData({ ...formData, email: e.target.value }); setErrors({ ...errors, email: "" }); }}
                   style={{
                     width: '100%',
-                    border: `1px solid ${errors.email ? '#dc2626' : '#ccc'}`,
-                    padding: '10px 12px',
-                    fontSize: 14,
+                    border: `1px solid ${errors.email ? '#dc2626' : '#999'}`,
+                    padding: '14px 14px',
+                    fontSize: 15,
                     color: '#171200',
                     outline: 'none',
                     background: 'transparent',
@@ -237,15 +237,15 @@ export default function ContactSection() {
                 {errors.email && <span style={{ fontSize: 12, color: '#dc2626', marginTop: 4, display: 'flex', alignItems: 'center', gap: 4 }}>ⓘ {errors.email}</span>}
               </div>
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: '#171200', display: 'block', marginBottom: 6 }}>
+                <label style={{ fontSize: 14, fontWeight: 500, color: '#999', display: 'block', marginBottom: 6 }}>
                   Phone <span>*</span>
                 </label>
-                <div style={{ display: 'flex', alignItems: 'center', border: `1px solid ${errors.phone ? '#dc2626' : '#ccc'}` }}>
+                <div style={{ display: 'flex', alignItems: 'center', border: `1px solid ${errors.phone ? '#dc2626' : '#999'}` }}>
                   <CountryCodeDropdown
                     value={formData.countryCode}
                     onChange={(code) => setFormData({ ...formData, countryCode: code })}
                   />
-                  <div style={{ width: 1, height: 20, background: '#ccc' }} />
+                  <div style={{ width: 1, height: 22, background: '#999' }} />
                   <input
                     type="tel"
                     placeholder="Phone"
@@ -253,8 +253,8 @@ export default function ContactSection() {
                     onChange={(e) => { setFormData({ ...formData, phone: e.target.value }); setErrors({ ...errors, phone: "" }); }}
                     style={{
                       flex: 1,
-                      padding: '10px 12px',
-                      fontSize: 14,
+                      padding: '14px 14px',
+                      fontSize: 15,
                       color: '#171200',
                       outline: 'none',
                       background: 'transparent',
@@ -267,19 +267,19 @@ export default function ContactSection() {
             </div>
 
             <div>
-              <label style={{ fontSize: 12, fontWeight: 600, color: '#171200', display: 'block', marginBottom: 6 }}>
+              <label style={{ fontSize: 14, fontWeight: 500, color: '#999', display: 'block', marginBottom: 6 }}>
                 Message <span>*</span>
               </label>
               <textarea
                 placeholder="Message"
-                rows={6}
+                rows={4}
                 value={formData.message}
                 onChange={(e) => { setFormData({ ...formData, message: e.target.value }); setErrors({ ...errors, message: "" }); }}
                 style={{
                   width: '100%',
-                  border: `1px solid ${errors.message ? '#dc2626' : '#ccc'}`,
-                  padding: '10px 12px',
-                  fontSize: 13,
+                  border: `1px solid ${errors.message ? '#dc2626' : '#999'}`,
+                  padding: '14px 14px',
+                  fontSize: 15,
                   color: '#171200',
                   outline: 'none',
                   resize: 'none',
@@ -296,7 +296,7 @@ export default function ContactSection() {
                 style={{
                   backgroundColor: '#E02222',
                   color: '#fff',
-                  padding: '14px 60px',
+                  padding: '13px 60px',
                   fontSize: 13,
                   fontWeight: 600,
                   border: 'none',

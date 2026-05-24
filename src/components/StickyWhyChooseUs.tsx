@@ -38,11 +38,11 @@ function AnimatedCard({ item, isLast, index, scrollProgress }: { item: WhyChoose
 
 
   return (
-    <section ref={ref} className="flex flex-col md:flex-row border-t-2 border-white min-h-[calc(100vh-108px)] md:h-[calc(100vh-108px)]">
+    <section ref={ref} className="flex flex-col md:flex-row border-t-2 border-white min-h-[calc(100vh-88px)] md:h-[calc(100vh-88px)]">
       {/* Image */}
       <div
         className={`relative w-full md:w-[48%] ${item.bg} flex flex-col h-[40vh] md:h-auto`}
-        style={{ padding: "20px 20px 20px 0" }}
+        style={{ padding: "80px 20px 0 0" }}
       >
         <div className="relative overflow-hidden flex-1 rounded-sm">
           <img
@@ -53,7 +53,7 @@ function AnimatedCard({ item, isLast, index, scrollProgress }: { item: WhyChoose
         </div>
       </div>
       {/* Vertical line separator */}
-      <div className={`hidden md:block w-[3px] shrink-0 ${index === 1 ? 'bg-[#E02222]' : 'bg-white'}`} />
+      <div className={`hidden md:block w-[1px] shrink-0 ${index === 1 ? 'bg-[#E02222]' : 'bg-white'}`} />
       {/* Content — colored right panel */}
       <div
         className={`${item.bg} text-white flex flex-col justify-between relative md:flex-1 overflow-hidden`}
@@ -62,7 +62,7 @@ function AnimatedCard({ item, isLast, index, scrollProgress }: { item: WhyChoose
         <div className="flex flex-col justify-between h-full">
           <div className="flex items-start justify-between">
             <h3
-              className="text-2xl md:text-3xl lg:text-4xl font-bold italic"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateX(0)" : "translateX(-40px)",
@@ -72,7 +72,7 @@ function AnimatedCard({ item, isLast, index, scrollProgress }: { item: WhyChoose
               {item.title}
             </h3>
             <span
-              className="text-4xl md:text-5xl font-light text-white"
+              className="text-3xl md:text-4xl lg:text-5xl font-light text-white"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateX(0)" : "translateX(40px)",
@@ -109,10 +109,10 @@ export default function StickyWhyChooseUs({ items }: StickyWhyChooseUsProps) {
       const nextEl = wrapperRefs.current[i + 1];
       if (!nextEl) return 0;
       const nextRect = nextEl.getBoundingClientRect();
-      const cardHeight = window.innerHeight - 108;
+      const cardHeight = window.innerHeight - 88;
       // Start animating when next card is within one card-height of the sticky position
-      if (nextRect.top < 108 + cardHeight) {
-        return Math.min(1, Math.max(0, (108 + cardHeight - nextRect.top) / (cardHeight * 0.4)));
+      if (nextRect.top < 88 + cardHeight) {
+        return Math.min(1, Math.max(0, (88 + cardHeight - nextRect.top) / (cardHeight * 0.4)));
       }
       return 0;
     });
@@ -130,8 +130,11 @@ export default function StickyWhyChooseUs({ items }: StickyWhyChooseUsProps) {
         <div
           key={i}
           ref={(el) => { wrapperRefs.current[i] = el; }}
-          className={i === items.length - 1 ? "relative" : "sticky top-[108px]"}
-          style={{ zIndex: i + 1 }}
+          className={i === items.length - 1 ? "relative" : "sticky top-[88px]"}
+          style={{
+            zIndex: i + 1,
+            paddingBottom: i === items.length - 1 ? undefined : "40vh",
+          }}
         >
           <AnimatedCard
             item={item}

@@ -103,7 +103,12 @@ export default function Home() {
       ═══════════════════════════════════════════════════════════ */}
       <WhiteSpecializeSection />
 
-      <div className="h-12 md:h-20 bg-white" />
+      {/* Why Choose Us heading - plain white section (separate from grid) */}
+      <section className="bg-white px-6 text-center" style={{ paddingTop: "100px", paddingBottom: "70px" }}>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#e50914] tracking-tight">
+          Why Choose Us?
+        </h2>
+      </section>
 
       {/* ═══════════════════════════════════════════════════════════
           SECTION 2: Why Choose Us — Stacked Sticky Cards
@@ -117,13 +122,13 @@ export default function Home() {
       <VideoSection />
 
       {/* Ready to Transform - black section */}
-      <section className="bg-black py-14 md:py-20 px-6 md:px-[5vw]">
+      <section className="bg-black px-6 md:px-[5vw]" style={{ paddingTop: "80px", paddingBottom: "20px" }}>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide leading-tight md:whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wide leading-tight md:whitespace-nowrap" style={{ marginLeft: "60px", transform: "translateY(-20px)" }}>
             READY TO TRANSFORM
           </h2>
-          <p className="text-white font-light text-sm md:text-lg leading-relaxed max-w-sm">
-            we combine creativity, precision, and commitment to deliver visualisation services. we ensure international-standard high-quality renders, on time and within your budget.
+          <p className="text-white font-light text-sm md:text-lg leading-relaxed max-w-sm py-6 md:py-8" style={{ marginRight: "60px" }}>
+            we combine creativity, precision, and commitment to deliver visualisation services. we ensure international-standard high-quality renders, on time and within your{' '}budget.
           </p>
         </div>
       </section>
