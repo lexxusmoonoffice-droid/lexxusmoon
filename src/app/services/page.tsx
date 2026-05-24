@@ -14,22 +14,22 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="overflow-x-hidden" style={{ paddingTop: "120px" }}>
+    <div style={{ paddingTop: "120px" }}>
       {/* Hero - Exterior Rendering */}
-      <section className="relative bg-white md:overflow-hidden md:h-[calc(100vh-10px)]">
+      <section className="relative bg-white md:overflow-hidden md:h-[calc(100vh-120px)]">
         <div className="flex flex-col md:flex-row md:h-full md:min-h-0">
           <div
-            className="w-full md:w-1/2 md:flex md:items-center md:justify-start md:py-0 md:pr-[4vw] text-center md:text-left md:px-0 md:pt-0 md:pb-0"
+            className="w-full md:w-1/2 md:flex md:items-start md:justify-start md:pr-[4vw] text-center md:text-left md:px-0 md:pb-0"
             style={{
               paddingLeft: "clamp(24px, 6vw, 100px)",
               paddingRight: "24px",
-              paddingTop: "64px",
+              paddingTop: "140px",
               paddingBottom: "40px",
             }}
           >
             <ScrollReveal>
               <div className="max-w-md mx-auto md:mx-0">
-                <h1 className="text-2xl md:text-4xl font-bold text-black mb-4 md:mb-8 leading-tight">
+                <h1 className="text-2xl md:text-4xl font-bold text-black leading-tight" style={{ marginBottom: "32px" }}>
                   Exterior Rendering Services
                 </h1>
                 <p className="text-black leading-relaxed font-normal text-sm md:text-base">
@@ -47,10 +47,10 @@ export default function ServicesPage() {
             style={{
               paddingLeft: "24px",
               paddingRight: "clamp(0px, calc(48px - 6vw), 24px)",
-              paddingBottom: "48px",
+              paddingBottom: "0px",
             }}
           >
-            <div className="hidden md:block" style={{ height: 80 }} />
+            <div className="hidden md:block" style={{ height: 30 }} />
             <div className="overflow-hidden md:rounded-l-[40px] md:flex-1 md:ml-4 h-[32vh] md:h-auto">
               <img
                 src="https://static.wixstatic.com/media/5dbb31_ab4c046bdfc8453988af86c797e8a3f6~mv2.jpg/v1/fill/w_800,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_ab4c046bdfc8453988af86c797e8a3f6~mv2.jpg"
@@ -79,7 +79,8 @@ export default function ServicesPage() {
                 width={800}
                 height={500}
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="w-full h-[40vh] md:h-[72vh] object-cover transition-transform duration-700 hover:scale-110 md:rounded-r-[40px]"
+                className="w-full object-cover transition-transform duration-700 hover:scale-110"
+                style={{ height: "55vh", borderTopRightRadius: "80px", borderBottomRightRadius: "80px" }}
               />
             </ScrollReveal>
           </div>
@@ -89,10 +90,10 @@ export default function ServicesPage() {
           >
             <ScrollReveal>
               <div className="max-w-sm w-full mx-auto md:mx-0">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#171200] mb-6 md:mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#171200]" style={{ marginBottom: "32px" }}>
                   Interior Rendering Services
                 </h2>
-                <p className="text-black leading-relaxed font-light text-sm md:text-base">
+                <p className="text-black leading-relaxed font-normal text-sm md:text-base">
                   We combine creativity, precision, and commitment to deliver
                   visualisation services that exceed expectations. Whether it&apos;s
                   a modern bedroom or a restaurant project, we ensure
@@ -106,7 +107,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Walkthrough Services */}
-      <section className="bg-gray-50 text-black pt-16 pb-32 md:py-0 md:min-h-screen md:h-screen">
+      <section className="bg-white text-black pt-16 pb-32 md:py-0 md:min-h-screen md:h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-12 md:gap-0">
           <div
             className="flex items-center justify-center h-full md:px-8 order-1 md:order-1 text-center md:text-left"
@@ -114,10 +115,10 @@ export default function ServicesPage() {
           >
             <ScrollReveal>
               <div className="max-w-sm w-full mx-auto md:mx-0">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-16 text-[#171200] md:whitespace-nowrap">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#171200] md:whitespace-nowrap" style={{ marginBottom: "32px" }}>
                   Walkthrough Services
                 </h2>
-                <p className="text-black leading-relaxed font-light text-sm md:text-base">
+                <p className="text-black leading-relaxed font-normal text-sm md:text-base">
                   you get more than just a render, you get a partner who values your
                   time, understands your vision, and works tirelessly to deliver
                   perfection.
@@ -140,7 +141,8 @@ export default function ServicesPage() {
               muted
               loop
               playsInline
-              className="w-full max-h-[50vh] md:max-h-[70vh] object-cover transition-transform duration-700 hover:scale-110 md:rounded-l-[40px]"
+              className="w-full object-cover transition-transform duration-700 hover:scale-110 md:rounded-l-[40px]"
+              style={{ maxHeight: "75vh", height: "75vh" }}
               poster="https://static.wixstatic.com/media/5dbb31_35962a1081cb471989146e2144e74de0f000.jpg/v1/fill/w_700,h_394,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_35962a1081cb471989146e2144e74de0f000.jpg"
             >
               <source

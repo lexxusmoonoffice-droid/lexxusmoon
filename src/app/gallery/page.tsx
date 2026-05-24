@@ -79,8 +79,8 @@ export default function GalleryPage() {
 
       {/* Asymmetric Two Images - small left bottom, big right top */}
       <section
-        className="flex flex-row items-center md:items-start justify-between gap-3 md:gap-20 md:px-[8%] h-[55vh] md:h-[95vh]"
-        style={{ paddingLeft: "50px", paddingRight: "12px" }}
+        className="flex flex-row items-center md:items-start justify-between gap-3 md:gap-20 px-6 md:px-[8%] h-[55vh] md:h-[95vh]"
+        style={{ paddingLeft: "50px", paddingRight: "50px" }}
       >
         <div className="relative overflow-hidden w-[32%] md:w-[28%] h-[40%] md:h-[75%] flex-shrink-0 md:self-end md:mb-[5%]">
           <Image
@@ -106,8 +106,8 @@ export default function GalleryPage() {
       <div className="h-12 md:h-40" />
 
       {/* Two Images - Left and Right with Overlap */}
-      <section className="relative h-[80vh] md:h-[170vh] px-3 md:px-0">
-        <div className="absolute overflow-hidden left-[3%] bottom-[-15%] w-[60%] h-[55%] z-10 md:left-[8%] md:bottom-[-55%] md:w-[60%] md:h-full">
+      <section className="relative h-[80vh] md:h-[170vh] px-6 md:px-0">
+        <div className="absolute overflow-hidden left-[6%] bottom-[-15%] w-[60%] h-[55%] z-10 md:left-[10%] md:bottom-[-55%] md:w-[60%] md:h-full">
           <Image
             src="/images/image.png"
             alt="Modern glass building at night"
@@ -116,7 +116,7 @@ export default function GalleryPage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute overflow-hidden right-[3%] top-[5%] w-[55%] h-[80%] z-20 md:right-[8%] md:top-0 md:w-[58%] md:h-full">
+        <div className="absolute overflow-hidden right-[6%] top-[5%] w-[55%] h-[80%] z-20 md:right-[10%] md:top-0 md:w-[58%] md:h-full">
           <Image
             src="/images/image1.png"
             alt="Commercial building exterior"

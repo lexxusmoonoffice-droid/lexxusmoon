@@ -5,26 +5,64 @@ import { useEffect, useRef, useState } from "react";
 const serviceCategories = [
   {
     title: "Modern and Classic Bedroom",
-    description:
-      "Bedrooms are personal sanctuaries, and our interior rendering services capture the essence of both modern and classic bedroom designs",
+    description: (
+      <>
+        Bedrooms are personal sanctuaries,
+        <br />
+        and our interior rendering services
+        <br />
+        capture the essence of
+        <br />
+        both modern and classic bedroom designs
+      </>
+    ),
     side: "left" as const,
   },
   {
     title: "Restaurants",
-    description:
-      "Our team specializes in interior rendering, delivering detailed and textures, ensuring every inch aligns with your concept.",
+    description: (
+      <>
+        Our team specializes in interior rendering,
+        <br />
+        delivering detailed textures and finishes,
+        <br />
+        ensuring every inch aligns with
+        <br />
+        your concept.
+      </>
+    ),
     side: "left" as const,
   },
   {
     title: "Modern and Classic Living Room",
-    description:
-      "Living rooms are where stories are shared and memories are created. visuals that showcase modern sophistication or classic charm with attention to detail.",
+    description: (
+      <>
+        Living rooms are where stories are shared
+        <br />
+        and memories are created.
+        <br />
+        Visuals that showcase modern
+        <br />
+        sophistication or classic charm
+        <br />
+        with attention to detail.
+      </>
+    ),
     side: "right" as const,
   },
   {
     title: "Kitchen",
-    description:
-      "Modern kitchens to classic culinary spaces, Lexxusmoon's 3D rendering design services focus on inspiring visuals.",
+    description: (
+      <>
+        Modern kitchens to classic culinary spaces,
+        <br />
+        Lexxusmoon's 3D rendering design
+        <br />
+        services focus on inspiring
+        <br />
+        visuals for your next project.
+      </>
+    ),
     side: "right" as const,
   },
 ];
@@ -91,8 +129,9 @@ export default function DesignsShowcase() {
               }}
             >
               <h3
-                className="text-lg font-bold mb-3 text-[#171200] transition-all duration-300"
+                className="text-lg font-bold mb-10 text-[#171200] transition-all duration-300"
                 style={{
+                  marginBottom: "2rem",
                   transform: hoveredIndex === i ? "scale(1.05)" : "scale(1)",
                   color: hoveredIndex === i ? "#D4A843" : "#171200",
                 }}
@@ -188,8 +227,9 @@ export default function DesignsShowcase() {
               }}
             >
               <h3
-                className="text-lg font-bold mb-3 text-[#171200] transition-all duration-300"
+                className="text-lg font-bold mb-10 text-[#171200] transition-all duration-300"
                 style={{
+                  marginBottom: "2rem",
                   transform: hoveredIndex === i + 2 ? "scale(1.05)" : "scale(1)",
                   color: hoveredIndex === i + 2 ? "#D4A843" : "#171200",
                 }}
