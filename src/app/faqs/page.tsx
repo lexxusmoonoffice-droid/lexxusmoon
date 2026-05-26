@@ -81,16 +81,22 @@ export default function FAQsPage() {
       >
         <div className="relative w-full h-full overflow-hidden">
           <Image
-            src="https://static.wixstatic.com/media/5dbb31_c701e5e867964006a1b1448a3145d18e~mv2.jpg/v1/fill/w_1920,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_c701e5e867964006a1b1448a3145d18e~mv2.jpg"
+            src="/images/faqs-hero.png"
             alt="Architectural brilliance"
             fill
             sizes="100vw"
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center md:items-end md:justify-end md:p-16 px-6">
+          <div className="absolute inset-0 bg-black/35" />
+          <style>{`
+            .faqs-hero-overlay { padding: 0 24px; }
+            @media (min-width: 768px) { .faqs-hero-overlay { padding: 64px 80px 24px 64px; } }
+            @media (min-width: 1024px) { .faqs-hero-overlay { padding: 64px 110px 24px 64px; } }
+          `}</style>
+          <div className="absolute inset-0 flex items-center justify-center md:items-end md:justify-end faqs-hero-overlay">
             <h2
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center md:text-right leading-tight md:!text-[70px]"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center md:text-right leading-tight lg:!text-[88px]"
               style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)", color: "#ffffff" }}
             >
               <span
@@ -132,15 +138,13 @@ export default function FAQsPage() {
 
       {/* FAQ Section */}
       <section
-        className="bg-white text-black md:px-[10%]"
+        className="bg-white text-black md:px-[6%]"
         style={{ paddingTop: 80, paddingBottom: 120, paddingLeft: "24px", paddingRight: "24px" }}
       >
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6" style={{ marginBottom: 70 }}>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight text-[#171200]">
-              Frequently asked
-              <br />
-              questions
+              Frequently asked questions
             </h1>
             <div className="relative w-full md:w-auto">
               <input
@@ -166,8 +170,11 @@ export default function FAQsPage() {
           </div>
 
           {/* Tab */}
-          <div className="mb-8">
-            <span className="text-sm font-medium text-[#E02222] border-b-2 border-[#E02222] pb-2">
+          <div style={{ marginBottom: 55 }}>
+            <span
+              className="font-medium text-[#E02222] border-b-2 border-[#E02222]"
+              style={{ fontSize: 17, paddingLeft: 16, paddingRight: 16, paddingBottom: 10, display: "inline-block" }}
+            >
               General
             </span>
           </div>
@@ -177,27 +184,28 @@ export default function FAQsPage() {
             {filteredFaqs.map((faq) => (
               <div
                 key={faq.id}
-                className="flex border border-gray-200 overflow-hidden"
+                className="flex border border-gray-300 overflow-hidden bg-white"
               >
                 {/* Red number badge */}
                 <div
-                  className="flex items-center justify-center text-white font-bold shrink-0 min-w-[56px] md:min-w-[120px] text-xl md:text-[32px]"
-                  style={{ backgroundColor: "#E02222" }}
+                  className="flex items-center justify-center text-white shrink-0 min-w-[70px] md:min-w-[110px] text-lg md:text-[26px]"
+                  style={{ backgroundColor: "#E02222", fontWeight: 400 }}
                 >
                   {faq.id}
                 </div>
                 {/* Content */}
-                <div className="flex-1 min-w-0" style={{ backgroundColor: "#f9fafb" }}>
+                <div className="flex-1 min-w-0 bg-white">
                   <button
                     onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
-                    className="w-full flex items-center gap-3 md:gap-6 p-4 md:p-9 text-left bg-transparent border-none cursor-pointer"
+                    className="w-full flex items-center gap-3 md:gap-6 text-left bg-transparent border-none cursor-pointer"
+                    style={{ paddingTop: 45, paddingBottom: 45, paddingLeft: 32, paddingRight: 32 }}
                   >
-                    <span className="flex-1 text-sm md:text-[22px] font-medium text-[#171200]">
+                    <span className="flex-1 text-sm md:text-[18px] font-normal text-[#171200]">
                       {faq.question}
                     </span>
                     <ChevronDown
-                      size={24}
-                      className={`text-gray-400 transition-transform duration-300 shrink-0 ${
+                      size={22}
+                      className={`text-gray-500 transition-transform duration-300 shrink-0 ${
                         openId === faq.id ? "rotate-180" : ""
                       }`}
                     />
@@ -210,7 +218,10 @@ export default function FAQsPage() {
                       transition: "max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease",
                     }}
                   >
-                    <div className="px-4 pb-4 md:px-9 md:pb-8 text-sm md:text-[18px] text-[#5f6360] leading-relaxed">
+                    <div
+                      className="text-sm md:text-[16px] text-[#5f6360] leading-relaxed"
+                      style={{ paddingLeft: 32, paddingRight: 32, paddingBottom: 32 }}
+                    >
                       {faq.answer}
                     </div>
                   </div>

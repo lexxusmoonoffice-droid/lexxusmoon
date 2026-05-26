@@ -77,12 +77,19 @@ export default function GalleryPage() {
       {/* Gap */}
       <div className="h-12 md:h-40" />
 
-      {/* Asymmetric Two Images - small left bottom, big right top */}
+      {/* Asymmetric Two Images - small left center, big right full */}
+      <style>{`
+        @media (min-width: 768px) {
+          .gallery-asym-row { gap: 30px !important; height: 130vh !important; padding-left: 9% !important; padding-right: 9% !important; }
+          .gallery-asym-row .asym-left { width: 38% !important; height: 55% !important; align-self: center !important; margin-bottom: 0 !important; }
+          .gallery-asym-row .asym-right { width: 56% !important; height: 100% !important; }
+        }
+      `}</style>
       <section
-        className="flex flex-row items-center md:items-start justify-between gap-3 md:gap-20 px-6 md:px-[8%] h-[55vh] md:h-[95vh]"
+        className="gallery-asym-row flex flex-row items-center md:items-stretch justify-between gap-3 px-6 md:px-[8%] h-[55vh]"
         style={{ paddingLeft: "50px", paddingRight: "50px" }}
       >
-        <div className="relative overflow-hidden w-[32%] md:w-[28%] h-[40%] md:h-[75%] flex-shrink-0 md:self-end md:mb-[5%]">
+        <div className="asym-left relative overflow-hidden w-[32%] h-[40%] flex-shrink-0">
           <Image
             src="/image3.png"
             alt="Modern living room with cherry blossom"
@@ -91,7 +98,7 @@ export default function GalleryPage() {
             className="object-cover"
           />
         </div>
-        <div className="relative overflow-hidden w-[50%] md:w-[48%] h-full flex-shrink-0">
+        <div className="asym-right relative overflow-hidden w-[50%] h-full flex-shrink-0">
           <Image
             src="/image.png"
             alt="Luxury interior with pendant light"
@@ -145,8 +152,15 @@ export default function GalleryPage() {
       <div className="h-12 md:h-40" />
 
       {/* Two Bedroom Images - Large Left, Small Right */}
-      <section className="flex flex-row items-center justify-between gap-3 md:gap-[60px] px-3 md:px-[8%] h-[60vh] md:h-[120vh]">
-        <div className="relative overflow-hidden w-[55%] md:w-[48%] h-full md:h-full flex-shrink-0">
+      <style>{`
+        @media (min-width: 768px) {
+          .gallery-bedroom-row { padding-left: 10% !important; padding-right: 10% !important; }
+          .gallery-bedroom-row .bed-left { width: 48% !important; }
+          .gallery-bedroom-row .bed-right { width: 38% !important; }
+        }
+      `}</style>
+      <section className="gallery-bedroom-row flex flex-row items-center justify-between gap-3 md:gap-[60px] px-3 h-[60vh] md:h-[120vh]">
+        <div className="bed-left relative overflow-hidden w-[55%] md:w-[48%] h-full md:h-full flex-shrink-0">
           <Image
             src="/images/imagenow.png"
             alt="Bedroom with chandelier"
@@ -155,7 +169,7 @@ export default function GalleryPage() {
             className="object-cover"
           />
         </div>
-        <div className="relative overflow-hidden w-[35%] md:w-[38%] h-[35%] md:h-[30%] flex-shrink-0">
+        <div className="bed-right relative overflow-hidden w-[35%] md:w-[38%] h-[35%] md:h-[30%] flex-shrink-0">
           <Image
             src="/images/imagenow2.png"
             alt="Bedroom detail view"

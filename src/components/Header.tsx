@@ -23,16 +23,24 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
-      if (currentY > lastScrollY.current && currentY > 108) {
-        setHidden(true);
+      if (pathname === "/faqs" || pathname === "/gallery") {
+        if (currentY > 108) {
+          setHidden(true);
+        } else {
+          setHidden(false);
+        }
       } else {
-        setHidden(false);
+        if (currentY > lastScrollY.current && currentY > 108) {
+          setHidden(true);
+        } else {
+          setHidden(false);
+        }
       }
       lastScrollY.current = currentY;
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header
