@@ -23,7 +23,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
-      if (pathname === "/faqs" || pathname === "/gallery") {
+      if (pathname === "/faqs" || pathname === "/gallery" || pathname === "/services") {
         if (currentY > 108) {
           setHidden(true);
         } else {

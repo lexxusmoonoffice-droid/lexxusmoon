@@ -22,13 +22,13 @@ const serviceCategories = [
     title: "Restaurants",
     description: (
       <>
-        Our team specializes in interior rendering,
+        Our team specializes in interior
         <br />
-        delivering detailed textures and finishes,
+        rendering, delivering detailed and
         <br />
-        ensuring every inch aligns with
+        textures, ensuring every inch aligns
         <br />
-        your concept.
+        with your concept.
       </>
     ),
     side: "left" as const,
@@ -54,13 +54,13 @@ const serviceCategories = [
     title: "Kitchen",
     description: (
       <>
-        Modern kitchens to classic culinary spaces,
+        Modern kitchens to classic culinary
         <br />
-        Lexxusmoon's 3D rendering design
+        spaces, Lexxusmoon&apos;s 3D rendering
         <br />
-        services focus on inspiring
+        design services focus on inspiring
         <br />
-        visuals for your next project.
+        visuals.
       </>
     ),
     side: "right" as const,
@@ -70,9 +70,20 @@ const serviceCategories = [
 export default function DesignsShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [laptopHovered, setLaptopHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleVideo = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -119,9 +130,7 @@ export default function DesignsShowcase() {
           {left.map((cat, i) => (
             <div
               key={i}
-              className="text-center cursor-pointer group"
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="text-center"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateX(0)" : "translateX(-60px)",
@@ -129,54 +138,41 @@ export default function DesignsShowcase() {
               }}
             >
               <h3
-                className="text-lg font-bold mb-10 text-[#171200] transition-all duration-300"
-                style={{
-                  marginBottom: "2rem",
-                  transform: hoveredIndex === i ? "scale(1.05)" : "scale(1)",
-                  color: hoveredIndex === i ? "#D4A843" : "#171200",
-                }}
+                className="text-lg font-bold text-[#171200]"
+                style={{ marginBottom: "2rem" }}
               >
                 {cat.title}
               </h3>
-              <p
-                className="text-black text-sm leading-relaxed font-normal transition-all duration-300"
-                style={{ opacity: 1 }}
-              >
+              <p className="text-black text-sm leading-relaxed font-normal">
                 {cat.description}
               </p>
-              <div
-                className="mx-auto mt-3 h-0.5 bg-[#D4A843] transition-all duration-500"
-                style={{
-                  width: hoveredIndex === i ? "60%" : "0%",
-                }}
-              />
             </div>
           ))}
         </div>
 
         {/* Center - Laptop Mockup */}
         <div
-          className="flex items-center justify-center cursor-pointer order-1 md:order-2"
-          onMouseEnter={() => { setLaptopHovered(true); videoRef.current?.pause(); }}
-          onMouseLeave={() => { setLaptopHovered(false); videoRef.current?.play(); }}
+          className="flex items-center justify-center order-1 md:order-2 cursor-pointer"
+          onMouseEnter={() => setLaptopHovered(true)}
+          onMouseLeave={() => setLaptopHovered(false)}
+          onClick={toggleVideo}
           style={{
             opacity: visible ? 1 : 0,
-            transform: visible
-              ? laptopHovered
-                ? "scale(1.05) translateY(-8px)"
-                : "scale(1)"
-              : "scale(0.8)",
+            transform: visible ? "scale(1)" : "scale(0.85)",
             transition: "all 0.6s ease-out",
           }}
         >
           <div className="relative w-full max-w-lg mx-auto">
-            {/* Laptop screen */}
+            {/* Laptop screen - black bezel on top/left/right, no bottom bezel */}
             <div
-              className="relative bg-black rounded-2xl overflow-hidden border-[8px] border-gray-800 transition-shadow duration-500"
+              className="relative bg-black overflow-hidden"
               style={{
+                borderRadius: "20px 20px 0 0",
+                padding: "16px 16px 0 16px",
                 boxShadow: laptopHovered
-                  ? "0 30px 60px -10px rgba(0,0,0,0.4), 0 0 40px rgba(212,168,67,0.2)"
-                  : "0 25px 50px -12px rgba(0,0,0,0.25)",
+                  ? "0 30px 60px -10px rgba(0,0,0,0.45)"
+                  : "0 22px 45px -12px rgba(0,0,0,0.3)",
+                transition: "box-shadow 0.4s ease",
               }}
             >
               <video
@@ -186,6 +182,7 @@ export default function DesignsShowcase() {
                 loop
                 playsInline
                 className="w-full aspect-video object-cover"
+                style={{ borderRadius: "4px 4px 0 0", display: "block" }}
                 poster="https://static.wixstatic.com/media/5dbb31_e900147ec8f2441b82686eb1e048817af000.jpg"
               >
                 <source
@@ -193,20 +190,38 @@ export default function DesignsShowcase() {
                   type="video/mp4"
                 />
               </video>
+              {/* Play/Pause icon overlay */}
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center"
+                style={{
+                  width: 72,
+                  height: 72,
+                  borderRadius: "50%",
+                  background: "rgba(255,255,255,0.85)",
+                  opacity: !isPlaying || laptopHovered ? 1 : 0,
+                  transition: "opacity 0.3s ease",
+                }}
+              >
+                {isPlaying ? (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="#171200">
+                    <rect x="6" y="5" width="4" height="14" rx="1" />
+                    <rect x="14" y="5" width="4" height="14" rx="1" />
+                  </svg>
+                ) : (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="#171200">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                )}
+              </div>
             </div>
-            {/* Laptop base */}
-            <div className="relative mx-auto">
-              <div className="h-4 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-lg mx-12" />
-              <div className="h-2 bg-gray-800 rounded-b-xl mx-6" />
-            </div>
-            {/* Glow effect */}
+            {/* Wider bottom base strip - extends out, curved/circular ends */}
             <div
-              className="absolute -inset-4 rounded-3xl blur-2xl -z-10 transition-all duration-500"
+              className="bg-black mx-auto"
               style={{
-                background: laptopHovered
-                  ? "rgba(212,168,67,0.25)"
-                  : "rgba(212,168,67,0.1)",
-                transform: laptopHovered ? "scale(1.1)" : "scale(1)",
+                width: "122%",
+                marginLeft: "-11%",
+                height: "15px",
+                borderRadius: "0 0 15px 15px",
               }}
             />
           </div>
@@ -217,9 +232,7 @@ export default function DesignsShowcase() {
           {right.map((cat, i) => (
             <div
               key={i}
-              className="text-center cursor-pointer group"
-              onMouseEnter={() => setHoveredIndex(i + 2)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className="text-center"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateX(0)" : "translateX(60px)",
@@ -227,27 +240,14 @@ export default function DesignsShowcase() {
               }}
             >
               <h3
-                className="text-lg font-bold mb-10 text-[#171200] transition-all duration-300"
-                style={{
-                  marginBottom: "2rem",
-                  transform: hoveredIndex === i + 2 ? "scale(1.05)" : "scale(1)",
-                  color: hoveredIndex === i + 2 ? "#D4A843" : "#171200",
-                }}
+                className="text-lg font-bold text-[#171200]"
+                style={{ marginBottom: "2rem" }}
               >
                 {cat.title}
               </h3>
-              <p
-                className="text-black text-sm leading-relaxed font-normal transition-all duration-300"
-                style={{ opacity: 1 }}
-              >
+              <p className="text-black text-sm leading-relaxed font-normal">
                 {cat.description}
               </p>
-              <div
-                className="mx-auto mt-3 h-0.5 bg-[#D4A843] transition-all duration-500"
-                style={{
-                  width: hoveredIndex === i + 2 ? "60%" : "0%",
-                }}
-              />
             </div>
           ))}
         </div>
