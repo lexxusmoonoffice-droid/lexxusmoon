@@ -134,8 +134,9 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Gap - extra for overflowing left image */}
-      <div className="h-32 md:h-[600px]" />
+      {/* Gap above panoramic image */}
+      <div className="h-32 md:hidden" />
+      <div className="hidden md:block" style={{ height: 750 }} />
 
       {/* Full Width Panoramic Image */}
       <section className="relative w-full overflow-hidden h-[50vh] md:h-[120vh]">
