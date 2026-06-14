@@ -5,13 +5,25 @@ import StickyWhyChooseUs from "@/components/StickyWhyChooseUs";
 import VideoSection from "@/components/VideoSection";
 import FloatingGallery from "@/components/FloatingGallery";
 import ClientsSection from "@/components/ClientsSection";
+import HeroCarousel from "@/components/HeroCarousel";
 
+// Hero carousel — dramatic exterior / aerial architectural shots
+const heroSlides = [
+  "/web/1.jpg",
+  "/web/2.jpg",
+  "/web/3.jpg",
+  "/web/17.jpg",
+  "/web/18.jpg",
+  "/web/19.jpg",
+];
+
+// 3D-tilted scattered images — mix of striking exteriors + luxury interiors
 const introImages = [
-  { src: "https://static.wixstatic.com/media/5dbb31_88bb229bbe5745149b6d1db96f9d368c~mv2.jpg/v1/fill/w_400,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_88bb229bbe5745149b6d1db96f9d368c~mv2.jpg", alt: "Architectural render 1" },
-  { src: "https://static.wixstatic.com/media/5dbb31_9faccd0d90314e49b2d28ff0613931a4~mv2.jpg/v1/fill/w_400,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_9faccd0d90314e49b2d28ff0613931a4~mv2.jpg", alt: "Architectural render 2" },
-  { src: "https://static.wixstatic.com/media/5dbb31_511046419ff642dd929cbdbfd7e62346~mv2.jpg/v1/fill/w_400,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_511046419ff642dd929cbdbfd7e62346~mv2.jpg", alt: "Architectural render 3" },
-  { src: "https://static.wixstatic.com/media/5dbb31_3f0fde4eeb3848a58f977cef79774d6b~mv2.jpg/v1/fill/w_320,h_470,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_3f0fde4eeb3848a58f977cef79774d6b~mv2.jpg", alt: "Architectural render 4" },
-  { src: "https://static.wixstatic.com/media/5dbb31_36c579afbcb14f229af64467e6eabf3f~mv2.jpg/v1/fill/w_600,h_450,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_36c579afbcb14f229af64467e6eabf3f~mv2.jpg", alt: "Architectural render 5" },
+  { src: "/web/1.jpg", alt: "Desert villa exterior" },
+  { src: "/web/8.jpg", alt: "Luxury living room with chandelier" },
+  { src: "/web/2.jpg", alt: "Forest villa aerial" },
+  { src: "/web/12.jpg", alt: "Classical living room" },
+  { src: "/web/18.jpg", alt: "Modern apartment exterior" },
 ];
 
 const whyChooseUs = [
@@ -19,32 +31,32 @@ const whyChooseUs = [
     num: "01",
     title: "Unmatched Quality",
     desc: "Our renders reflect the highest standards, ensuring every texture, shadow, and light brings realism to your projects.",
-    img: "https://static.wixstatic.com/media/5dbb31_efb0d74fb5364626826b851bc0980d76~mv2.jpg/v1/fill/w_700,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_efb0d74fb5364626826b851bc0980d76~mv2.jpg",
+    img: "/web/13.jpg",
     bg: "bg-[#E02222]",
   },
   {
     num: "02",
     title: "On-Time Delivery",
     desc: "Time is valuable, and we respect that. At Lexxusmoon, we always deliver on time without compromising quality.",
-    img: "https://static.wixstatic.com/media/5dbb31_343dd2c15fc54627b4dc178a8cb3d1d0~mv2.jpg/v1/fill/w_700,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_343dd2c15fc54627b4dc178a8cb3d1d0~mv2.jpg",
+    img: "/web/16.jpg",
     bg: "bg-black",
   },
   {
     num: "03",
     title: "Affordable Pricing",
     desc: "Premium rendering services don't have to break the bank. Our competitive rates make exceptional renders accessible for all.",
-    img: "https://static.wixstatic.com/media/5dbb31_36c579afbcb14f229af64467e6eabf3f~mv2.jpg/v1/fill/w_700,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_36c579afbcb14f229af64467e6eabf3f~mv2.jpg",
+    img: "/web/4.jpg",
     bg: "bg-[#E02222]",
   },
 ];
 
 const masonryImages = [
-  { src: "https://static.wixstatic.com/media/5dbb31_7cff247bf6b342f1b05bee60e1fb77a0~mv2.jpg/v1/fill/w_500,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_7cff247bf6b342f1b05bee60e1fb77a0~mv2.jpg", alt: "Project 1" },
-  { src: "https://static.wixstatic.com/media/5dbb31_f04a31f382f04d1daf760dbb5bfebf0a~mv2.jpg/v1/fill/w_500,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_f04a31f382f04d1daf760dbb5bfebf0a~mv2.jpg", alt: "Project 2" },
-  { src: "https://static.wixstatic.com/media/5dbb31_f5c6d9ed147c485ea71b6a131e6cbe93~mv2.jpg/v1/fill/w_500,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_f5c6d9ed147c485ea71b6a131e6cbe93~mv2.jpg", alt: "Project 3" },
-  { src: "https://static.wixstatic.com/media/5dbb31_4e0aa080a8744180a3eedd449f1bf755~mv2.jpg/v1/fill/w_500,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_4e0aa080a8744180a3eedd449f1bf755~mv2.jpg", alt: "Project 4" },
-  { src: "https://static.wixstatic.com/media/5dbb31_8f5a7c0defa740f7af7ed5beeb7d267d~mv2.jpg/v1/fill/w_500,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_8f5a7c0defa740f7af7ed5beeb7d267d~mv2.jpg", alt: "Project 5" },
-  { src: "https://static.wixstatic.com/media/5dbb31_e3d16a805e2b4969a42d41e954a23857~mv2.jpg/v1/fill/w_500,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_e3d16a805e2b4969a42d41e954a23857~mv2.jpg", alt: "Project 6" },
+  { src: "/web/7.jpg", alt: "Aerial luxury living room" },
+  { src: "/web/9.jpg", alt: "Classic bedroom" },
+  { src: "/web/10.jpg", alt: "Modern apartment with city view" },
+  { src: "/web/14.jpg", alt: "Leather sofa living room" },
+  { src: "/web/15.jpg", alt: "Bedroom workspace" },
+  { src: "/web/19.jpg", alt: "Aerial campus view" },
 ];
 
 const clientLogos = [
@@ -61,15 +73,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-screen bg-black overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "url('https://static.wixstatic.com/media/5dbb31_1c5c44cc145b43dfacd716cd6324c4c8~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_1c5c44cc145b43dfacd716cd6324c4c8~mv2.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "48% 59%",
-          }}
-        />
+        <HeroCarousel images={heroSlides} />
 
         {/* LEXXUS - top left */}
         <h1

@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const collageSection1 = [
-  { src: "https://static.wixstatic.com/media/5dbb31_9aa6ef48623f432dac3051447e73043e~mv2.jpg/v1/fill/w_400,h_500,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_9aa6ef48623f432dac3051447e73043e~mv2.jpg", alt: "Interior render", wide: false },
-  { src: "https://static.wixstatic.com/media/5dbb31_01f30be55e92485c9952fc1762e9249e~mv2.jpg/v1/fill/w_350,h_460,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_01f30be55e92485c9952fc1762e9249e~mv2.jpg", alt: "Architectural photo", wide: false },
-  { src: "https://static.wixstatic.com/media/5dbb31_5414df7a3c784767bd1bd761101bff0b~mv2.webp/v1/fill/w_400,h_580,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5dbb31_5414df7a3c784767bd1bd761101bff0b~mv2.webp", alt: "Interior design", wide: false },
+  { src: "/web/11.jpg", alt: "Bedroom with city view", wide: false },
+  { src: "/web/4.jpg", alt: "Warm luxury lounge", wide: false },
+  { src: "/web/5.jpg", alt: "Dark luxury bar", wide: false },
 ];
 
 
@@ -30,11 +30,11 @@ export default function GalleryPage() {
           </Link>
           {/* Bottom-left small kitchen */}
           <Link href="/" className="absolute overflow-hidden" style={{ left: "3%", bottom: "3%", width: "32%", height: "42%", zIndex: 25 }}>
-            <Image src="/gallery-bottom-left.jpg" alt="Kitchen interior" fill sizes="32vw" className="object-cover" />
+            <Image src="/web/5.jpg" alt="Dark luxury bar" fill sizes="32vw" className="object-cover" />
           </Link>
           {/* Right exterior */}
           <Link href="/" className="absolute overflow-hidden" style={{ right: "3%", top: "15%", width: "30%", height: "55%", zIndex: 15 }}>
-            <Image src="/gallery-exterior.jpg" alt="Exterior building" fill sizes="30vw" className="object-cover" />
+            <Image src="/web/17.jpg" alt="Modern glass building exterior" fill sizes="30vw" className="object-cover" />
           </Link>
           {/* Bottom right orange kitchen */}
           <Link href="/" className="absolute overflow-hidden" style={{ right: "5%", bottom: "5%", width: "28%", height: "38%", zIndex: 10 }}>
@@ -44,7 +44,7 @@ export default function GalleryPage() {
         {/* Desktop: scattered absolute - matching reference layout */}
         {/* Bottom-left small image - dark kitchen */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ left: "11%", bottom: "-12%", width: "20%", height: "65%", zIndex: 25 }}>
-          <Image src="/gallery-bottom-left.jpg" alt="Kitchen interior" fill sizes="27vw" className="object-cover" />
+          <Image src="/web/5.jpg" alt="Dark luxury bar" fill sizes="27vw" className="object-cover" />
         </Link>
         {/* Center large image - bedroom */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ left: "24%", top: "0%", width: "32%", height: "105%", zIndex: 20 }}>
@@ -52,7 +52,7 @@ export default function GalleryPage() {
         </Link>
         {/* Right-center image - exterior building */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ left: "54%", top: "8%", width: "22%", height: "78%", zIndex: 15 }}>
-          <Image src="/gallery-exterior.jpg" alt="Exterior building" fill sizes="22vw" className="object-cover" />
+          <Image src="/web/17.jpg" alt="Modern glass building exterior" fill sizes="22vw" className="object-cover" />
         </Link>
         {/* Far right - orange kitchen */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ right: "10%", top: "0%", width: "20%", height: "66%", zIndex: 10 }}>
@@ -66,7 +66,7 @@ export default function GalleryPage() {
       {/* Full Width Living Room Image */}
       <section className="relative w-full overflow-hidden h-[50vh] md:h-[100vh] mt-16 md:mt-[140px]">
         <Image
-          src="/image2.png"
+          src="/web/8.jpg"
           alt="Luxury living room interior"
           fill
           sizes="100vw"
@@ -91,8 +91,8 @@ export default function GalleryPage() {
       >
         <div className="asym-left relative overflow-hidden w-[32%] h-[40%] flex-shrink-0">
           <Image
-            src="/image3.png"
-            alt="Modern living room with cherry blossom"
+            src="/web/14.jpg"
+            alt="Living room with leather sofa"
             fill
             sizes="(max-width: 768px) 32vw, 25vw"
             className="object-cover"
@@ -100,8 +100,8 @@ export default function GalleryPage() {
         </div>
         <div className="asym-right relative overflow-hidden w-[50%] h-full flex-shrink-0">
           <Image
-            src="/image.png"
-            alt="Luxury interior with pendant light"
+            src="/web/16.jpg"
+            alt="Open-plan living and kitchen"
             fill
             sizes="(max-width: 768px) 50vw, 60vw"
             className="object-cover"
@@ -141,12 +141,41 @@ export default function GalleryPage() {
       {/* Full Width Panoramic Image */}
       <section className="relative w-full overflow-hidden h-[50vh] md:h-[120vh]">
         <Image
-          src="/images/imagen.png"
+          src="/web/7.jpg"
           alt="Panoramic living room view"
           fill
           sizes="100vw"
           className="object-cover"
         />
+      </section>
+
+      {/* Gap */}
+      <div className="h-12 md:h-40" />
+
+      {/* Twin Architectural Showcase — Staggered Diptych */}
+      <section className="relative w-full px-6 md:px-[10%] py-4 md:py-8">
+        <div className="grid grid-cols-12 gap-4 md:gap-6 items-start">
+          {/* Left wide image — anchored top */}
+          <div className="col-span-12 md:col-span-7 relative overflow-hidden h-[40vh] md:h-[78vh] shadow-[0_25px_70px_rgba(0,0,0,0.25)]">
+            <Image
+              src="/web/18.jpg"
+              alt="Modern apartment buildings"
+              fill
+              sizes="(max-width: 768px) 100vw, 58vw"
+              className="object-cover"
+            />
+          </div>
+          {/* Right narrower image — pushed down for staircase effect */}
+          <div className="col-span-12 md:col-span-5 relative overflow-hidden h-[32vh] md:h-[58vh] md:mt-24 shadow-[0_25px_70px_rgba(0,0,0,0.25)]">
+            <Image
+              src="/web/3.jpg"
+              alt="Aerial cityscape view"
+              fill
+              sizes="(max-width: 768px) 100vw, 42vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Gap */}
@@ -163,7 +192,7 @@ export default function GalleryPage() {
       <section className="gallery-bedroom-row flex flex-row items-center justify-between gap-3 md:gap-[60px] px-3 h-[60vh] md:h-[120vh]">
         <div className="bed-left relative overflow-hidden w-[55%] md:w-[48%] h-full md:h-full flex-shrink-0">
           <Image
-            src="/images/imagenow.png"
+            src="/web/9.jpg"
             alt="Bedroom with chandelier"
             fill
             sizes="(max-width: 768px) 55vw, 55vw"
@@ -172,8 +201,8 @@ export default function GalleryPage() {
         </div>
         <div className="bed-right relative overflow-hidden w-[35%] md:w-[38%] h-[35%] md:h-[30%] flex-shrink-0">
           <Image
-            src="/images/imagenow2.png"
-            alt="Bedroom detail view"
+            src="/web/15.jpg"
+            alt="Bedroom with workspace"
             fill
             sizes="(max-width: 768px) 35vw, 30vw"
             className="object-cover"
@@ -187,8 +216,8 @@ export default function GalleryPage() {
       {/* Full Width Image - Luxury Living Space */}
       <section className="relative w-full overflow-hidden h-[50vh] md:h-[100vh]">
         <Image
-          src="/images/imagenext.png"
-          alt="Luxury living space with marble table"
+          src="/web/12.jpg"
+          alt="Classical luxury living space"
           fill
           sizes="100vw"
           className="object-cover"
