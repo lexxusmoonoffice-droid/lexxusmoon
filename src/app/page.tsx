@@ -72,27 +72,27 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-screen bg-black overflow-hidden">
-        <HeroCarousel images={heroSlides} />
+      <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-screen bg-black overflow-hidden">
+        <HeroCarousel fallbackImages={heroSlides} intervalMs={5000} />
 
-        {/* LEXXUS - top left */}
+        {/* LEXXUS - top left - mobile responsive */}
         <h1
-          className="absolute top-[35%] md:top-[18%] left-[5%] text-[3.5rem] sm:text-[4.5rem] md:text-[4rem] lg:text-[5.5rem] font-bold tracking-wider text-white leading-none z-10 uppercase"
+          className="absolute top-[25%] sm:top-[30%] md:top-[18%] left-[5%] right-[5%] md:right-auto text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5.5rem] font-bold tracking-wider text-white leading-tight md:leading-none z-10 uppercase"
           style={{ animation: 'slideFromLeft 1.2s ease-out forwards', opacity: 0 }}
         >
           LEXXUS
         </h1>
 
-        {/* MOON - bottom right */}
+        {/* MOON - bottom right - mobile responsive */}
         <span
-          className="absolute bottom-[12%] right-[5%] text-[3.5rem] sm:text-[4.5rem] md:text-[4rem] lg:text-[5.5rem] font-bold tracking-wider text-white leading-none z-10 uppercase"
+          className="absolute bottom-[18%] sm:bottom-[20%] md:bottom-[12%] right-[5%] text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5.5rem] font-bold tracking-wider text-white leading-tight md:leading-none z-10 uppercase"
           style={{ animation: 'slideFromRight 1.2s ease-out forwards', opacity: 0 }}
         >
           MOON
         </span>
 
-        {/* Tagline - bottom center */}
-        <p className="absolute bottom-[5%] left-1/2 -translate-x-1/2 text-sm sm:text-lg md:text-2xl lg:text-3xl text-white font-semibold tracking-wider z-10 text-center px-4 md:whitespace-nowrap w-full md:w-auto">
+        {/* Tagline - bottom center - mobile responsive */}
+        <p className="absolute bottom-[5%] sm:bottom-[6%] md:bottom-[8%] left-1/2 -translate-x-1/2 text-[0.75rem] sm:text-base md:text-2xl lg:text-3xl text-white font-semibold tracking-wide md:tracking-wider z-10 text-center px-3 sm:px-4 md:px-0 w-full md:w-auto whitespace-normal sm:whitespace-normal md:whitespace-nowrap leading-tight sm:leading-normal">
           &ldquo;Your Vision, Our 3D Expertise&rdquo;
         </p>
       </section>

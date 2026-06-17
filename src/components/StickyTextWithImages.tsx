@@ -139,7 +139,7 @@ export default function StickyTextWithImages({ images }: StickyTextWithImagesPro
 
   return (
     <section
-      className="relative bg-black overflow-x-clip"
+      className="relative bg-black w-full overflow-x-hidden"
       style={{
         perspective: "1500px",
         paddingTop: isMobile ? "100px" : "175px",
@@ -148,7 +148,7 @@ export default function StickyTextWithImages({ images }: StickyTextWithImagesPro
     >
       {/* Heading at top */}
       <div
-        className="px-4 md:px-8"
+        className="px-4 md:px-8 w-full"
         style={{ marginBottom: isMobile ? "120px" : "220px" }}
       >
         {Heading}
@@ -156,11 +156,13 @@ export default function StickyTextWithImages({ images }: StickyTextWithImagesPro
 
       {/* Scattered 3D-tilted images below */}
       <div
-        className="relative flex flex-col gap-32 md:gap-52"
+        className="relative flex flex-col gap-32 md:gap-52 w-full"
         style={{
           transformStyle: "preserve-3d",
-          paddingLeft: isMobile ? "16px" : "32px",
-          paddingRight: isMobile ? "16px" : "32px",
+          paddingLeft: isMobile ? "8px" : "32px",
+          paddingRight: isMobile ? "8px" : "32px",
+          maxWidth: isMobile ? "100vw" : "auto",
+          overflow: isMobile ? "hidden" : "visible",
         }}
       >
         {images.map((img, i) => {
@@ -181,7 +183,7 @@ export default function StickyTextWithImages({ images }: StickyTextWithImagesPro
             // Inner div is what the scroll handler transforms in 3D.
             <div
               key={i}
-              className={align}
+              className={isMobile ? "self-center" : align}
               style={{
                 opacity: 0,
                 animation: "imageZoomIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards",

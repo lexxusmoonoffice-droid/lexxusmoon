@@ -14,6 +14,10 @@ const navItems = [
   { label: "FAQs", href: "/faqs", color: "#D4A843" },
 ];
 
+const externalLinks = [
+  { label: "DIGITAL PRODUCTS", href: "https://e-lexxus-frontend.vercel.app/" },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -61,7 +65,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav - centered in full header width */}
-        <nav className="hidden md:flex items-center gap-16 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -76,6 +80,17 @@ export default function Header() {
               </Link>
             );
           })}
+          {externalLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium tracking-[0.2em] text-[#D4A843] hover:opacity-80 transition-all pb-1 border-b-2 border-[#D4A843]"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* CTA Button */}
@@ -114,6 +129,17 @@ export default function Header() {
         <div className="md:hidden bg-black border-t border-gray-800 px-6 py-4">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href} className="block py-4 text-base font-semibold tracking-[0.2em] border-b border-gray-800 text-white text-center" onClick={() => setMobileOpen(false)}>{item.label}</Link>
+          ))}
+          {externalLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-4 text-base font-semibold tracking-[0.2em] border-b border-gray-800 text-[#D4A843] text-center hover:text-white transition-colors duration-300"
+            >
+              {link.label}
+            </a>
           ))}
           <Link
             href="/get-a-quote"
