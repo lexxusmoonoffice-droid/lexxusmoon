@@ -30,7 +30,6 @@ body {
   color: #fff;
   font-family: var(--font-work-sans), sans-serif;
   width: 100%;
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -67,14 +66,12 @@ body {
 /* Prevent layout shift on mobile */
 main {
   width: 100%;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
 
 section {
   width: 100%;
-  overflow-x: hidden;
 }
 
 @keyframes fadeInUp {

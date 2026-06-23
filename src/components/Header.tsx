@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Box } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const navItems = [
@@ -14,15 +14,16 @@ const navItems = [
   { label: "FAQs", href: "/faqs", color: "#D4A843" },
 ];
 
-const externalLinks = [
-  { label: "DIGITAL PRODUCTS", href: "https://e-lexxus-frontend.vercel.app/" },
-];
-
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
+
+  const digitalProductsUrl = process.env.NEXT_PUBLIC_DIGITAL_PRODUCTS_URL || "https://3dshop.lexxusmoon.com/";
+  const externalLinks = [
+    { label: "3D LIBRARY", href: digitalProductsUrl },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,9 +87,12 @@ export default function Header() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium tracking-[0.2em] text-[#D4A843] hover:opacity-80 transition-all pb-1 border-b-2 border-[#D4A843]"
+              className="group relative flex items-center gap-2 overflow-hidden text-[13px] font-medium tracking-[0.15em] text-[#D4A843] border border-[#D4A843]/70 rounded-full px-4 py-1.5 bg-[#D4A843]/[0.07] shadow-[0_0_12px_rgba(212,168,67,0.12)] hover:text-black hover:shadow-[0_0_22px_rgba(212,168,67,0.45)] transition-all duration-300"
             >
-              {link.label}
+              {/* gold fill slides in from left on hover */}
+              <span className="absolute inset-0 bg-[#D4A843] -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+              <Box size={15} strokeWidth={2.2} className="relative z-10 transition-transform duration-500 group-hover:rotate-[360deg]" />
+              <span className="relative z-10">{link.label}</span>
             </a>
           ))}
         </nav>
@@ -136,8 +140,9 @@ export default function Header() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block py-4 text-base font-semibold tracking-[0.2em] border-b border-gray-800 text-[#D4A843] text-center hover:text-white transition-colors duration-300"
+              className="flex items-center justify-center gap-2 my-4 py-3 text-base font-semibold tracking-[0.15em] text-[#D4A843] border border-[#D4A843]/70 rounded-full text-center bg-[#D4A843]/[0.07] shadow-[0_0_14px_rgba(212,168,67,0.15)] hover:bg-[#D4A843] hover:text-black transition-all duration-300"
             >
+              <Box size={18} strokeWidth={2.2} />
               {link.label}
             </a>
           ))}

@@ -28,7 +28,7 @@ export default function ClientsSection({ logos }: ClientsSectionProps) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white pt-20 pb-24 px-6 md:pt-40 md:pb-56 md:px-10">
+    <section ref={sectionRef} className="bg-white pt-20 pb-24 px-6 md:pt-40 md:pb-56 md:px-10 overflow-x-clip">
       <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <h2
           className="text-3xl md:text-[56px]"
@@ -72,9 +72,10 @@ export default function ClientsSection({ logos }: ClientsSectionProps) {
               <Image
                 src={logo}
                 alt={`Client ${i + 1}`}
-                width={400}
-                height={400}
-                sizes="(max-width: 768px) 40vw, 15vw"
+                width={600}
+                height={600}
+                quality={90}
+                sizes="(max-width: 768px) 75vw, 28vw"
                 style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.8)' }}
               />
             </div>

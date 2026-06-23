@@ -83,7 +83,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* Left - Video */}
         <div
-          className="w-full md:w-[45%] relative cursor-pointer flex items-center justify-center min-h-[280px] md:min-h-[560px]"
+          className="w-full md:w-[45%] relative cursor-pointer flex items-center justify-center min-h-[280px] md:min-h-[560px] overflow-hidden"
           onClick={toggleVideo}
         >
           <video

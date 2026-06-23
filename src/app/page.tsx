@@ -60,12 +60,12 @@ const masonryImages = [
 ];
 
 const clientLogos = [
-  "https://static.wixstatic.com/media/5dbb31_c815b7a534a84bcfa788fc7f75da2adf~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/1.png",
-  "https://static.wixstatic.com/media/5dbb31_74121b2813934a3db39efa12430dabcf~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.png",
-  "https://static.wixstatic.com/media/5dbb31_1d20db4ed1354303ab8116f7a0ba9857~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3.png",
-  "https://static.wixstatic.com/media/5dbb31_93299331002f4980bf68469ff5ebec37~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4.png",
-  "https://static.wixstatic.com/media/5dbb31_31f8476d375a44ecbef293d7160f1e1c~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5.png",
-  "https://static.wixstatic.com/media/5dbb31_7933a069d1794329b92af48114fa4cbf~mv2.png/v1/fill/w_200,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6.png",
+  "https://static.wixstatic.com/media/5dbb31_c815b7a534a84bcfa788fc7f75da2adf~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/1.png",
+  "https://static.wixstatic.com/media/5dbb31_74121b2813934a3db39efa12430dabcf~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2.png",
+  "https://static.wixstatic.com/media/5dbb31_1d20db4ed1354303ab8116f7a0ba9857~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/3.png",
+  "https://static.wixstatic.com/media/5dbb31_93299331002f4980bf68469ff5ebec37~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4.png",
+  "https://static.wixstatic.com/media/5dbb31_31f8476d375a44ecbef293d7160f1e1c~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5.png",
+  "https://static.wixstatic.com/media/5dbb31_7933a069d1794329b92af48114fa4cbf~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6.png",
 ];
 
 export default function Home() {

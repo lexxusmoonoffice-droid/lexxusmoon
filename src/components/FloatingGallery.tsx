@@ -112,7 +112,8 @@ export default function FloatingGallery({ images }: FloatingGalleryProps) {
                 src={img.src}
                 alt={img.alt}
                 fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                quality={90}
+                sizes="(max-width: 768px) 100vw, 66vw"
                 className="object-cover"
               />
               <div

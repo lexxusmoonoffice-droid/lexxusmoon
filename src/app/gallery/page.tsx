@@ -44,19 +44,19 @@ export default function GalleryPage() {
         {/* Desktop: scattered absolute - matching reference layout */}
         {/* Bottom-left small image - dark kitchen */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ left: "11%", bottom: "-12%", width: "20%", height: "65%", zIndex: 25 }}>
-          <Image src="/web/5.jpg" alt="Dark luxury bar" fill sizes="27vw" className="object-cover" />
+          <Image src="/web/5.jpg" alt="Dark luxury bar" fill sizes="80vw" quality={90} className="object-cover" />
         </Link>
         {/* Center large image - bedroom */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ left: "24%", top: "0%", width: "32%", height: "105%", zIndex: 20 }}>
-          <Image src={collageSection1[0].src} alt={collageSection1[0].alt} fill sizes="30vw" className="object-cover" />
+          <Image src={collageSection1[0].src} alt={collageSection1[0].alt} fill sizes="120vw" quality={90} className="object-cover" />
         </Link>
         {/* Right-center image - exterior building */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ left: "54%", top: "8%", width: "22%", height: "78%", zIndex: 15 }}>
-          <Image src="/web/17.jpg" alt="Modern glass building exterior" fill sizes="22vw" className="object-cover" />
+          <Image src="/web/17.jpg" alt="Modern glass building exterior" fill sizes="80vw" quality={90} className="object-cover" />
         </Link>
         {/* Far right - orange kitchen */}
         <Link href="/" className="hidden md:block absolute overflow-hidden cursor-pointer" style={{ right: "10%", top: "0%", width: "20%", height: "66%", zIndex: 10 }}>
-          <Image src={collageSection1[1].src} alt={collageSection1[1].alt} fill sizes="20vw" className="object-cover" />
+          <Image src={collageSection1[1].src} alt={collageSection1[1].alt} fill sizes="68vw" quality={90} className="object-cover" />
         </Link>
       </section>
 
@@ -94,7 +94,8 @@ export default function GalleryPage() {
             src="/web/14.jpg"
             alt="Living room with leather sofa"
             fill
-            sizes="(max-width: 768px) 32vw, 25vw"
+            sizes="(max-width: 768px) 60vw, 100vw"
+            quality={90}
             className="object-cover"
           />
         </div>
@@ -103,7 +104,8 @@ export default function GalleryPage() {
             src="/web/16.jpg"
             alt="Open-plan living and kitchen"
             fill
-            sizes="(max-width: 768px) 50vw, 60vw"
+            sizes="(max-width: 768px) 60vw, 135vw"
+            quality={90}
             className="object-cover"
           />
         </div>
@@ -119,7 +121,7 @@ export default function GalleryPage() {
             src="/images/image.png"
             alt="Modern glass building at night"
             fill
-            sizes="(max-width: 768px) 60vw, 50vw"
+            sizes="(max-width: 768px) 60vw, 55vw"
             className="object-cover"
           />
         </div>
@@ -128,7 +130,7 @@ export default function GalleryPage() {
             src="/images/image1.png"
             alt="Commercial building exterior"
             fill
-            sizes="(max-width: 768px) 55vw, 55vw"
+            sizes="(max-width: 768px) 60vw, 55vw"
             className="object-cover"
           />
         </div>
@@ -161,7 +163,7 @@ export default function GalleryPage() {
               src="/web/18.jpg"
               alt="Modern apartment buildings"
               fill
-              sizes="(max-width: 768px) 100vw, 58vw"
+              sizes="(max-width: 768px) 100vw, 90vw"
               className="object-cover"
             />
           </div>
@@ -171,7 +173,7 @@ export default function GalleryPage() {
               src="/web/3.jpg"
               alt="Aerial cityscape view"
               fill
-              sizes="(max-width: 768px) 100vw, 42vw"
+              sizes="(max-width: 768px) 100vw, 75vw"
               className="object-cover"
             />
           </div>
@@ -195,7 +197,8 @@ export default function GalleryPage() {
             src="/web/9.jpg"
             alt="Bedroom with chandelier"
             fill
-            sizes="(max-width: 768px) 55vw, 55vw"
+            sizes="(max-width: 768px) 70vw, 140vw"
+            quality={90}
             className="object-cover"
           />
         </div>
@@ -204,7 +207,7 @@ export default function GalleryPage() {
             src="/web/15.jpg"
             alt="Bedroom with workspace"
             fill
-            sizes="(max-width: 768px) 35vw, 30vw"
+            sizes="(max-width: 768px) 50vw, 50vw"
             className="object-cover"
           />
         </div>
